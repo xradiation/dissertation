@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About</title>
+    <link rel="stylesheet" href="../style/bulma.min.css" />
+    <link rel="stylesheet" href="../style/webfonts/all.css" />
+  </head>
+  <body>
+    <script type="text/javascript" src="header.js"></script>
+
+    <section>
+      <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+          <div class="tile is-child box">
+            <p class="title">One</p>
+            <p>
+	    This a Qemu/KVM Web Interface that mainlly helps new users to test and
+	    check Qemu and KVM inner workings. The motivation behinde this project
+	    was that during the time over of which I've been using Qemu and KVM
+	    a handful of people told me that it was intimidating to use it.
+            </p>
+          </div>
+          <div class="tile is-child box">
+            <p class="title">Two</p>
+            <p>
+	    The project structure is rather simple, it consists of four tabs in the
+	    main interface namely "Create VM, Start VM, Downloads & Qemu".
+            </p>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title">Three</p>
+            <p>
+	    The "Create VM" tab is a form that helps users to create a Virtual Machine
+	    remotely on the server running this Web UI without any previous knowledge
+	    of how to operate Qemu command line interface.
+	    </p>
+	    <br/>
+	    <p>
+	    The next important tab is the "Start VM" tab, this one allow the user to
+	    start a Virtual Machine that he or an other user has created earlier.
+            </p>
+	    <br/>
+            <p>
+	    The "Downloads" tab contains downloadable content the helps the user to use
+	    the web UI such as "VNC Clients". The content on this tab can be updated to
+	    serve more tools or manuals in the future.
+            </p>
+	    <br/>
+            <p>
+	    Lastly the "Qemu" tab, this tab is there only for debugging purposes and
+	    it's not meant to be used by end users, unless the required knowledge to
+	    operate Qemu command line interface is acquired.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="footer.js"></script>
+  </body>
+</html>

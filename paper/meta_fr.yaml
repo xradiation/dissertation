@@ -1,0 +1,44 @@
+
+---
+documentclass: report # article,report,book,scrreprt,scrbook,scrartcl,scrlttr2,memoir
+title: " Évaluation do la Sécurité des Conteneurs Docker Dans un Environnement Virtualisé "
+subtitle: " Guide Général "
+author: " Guenfaf Hicham "
+date: "2020-06-06"
+abstract: " Cet article se concentre principalement sur la configuration, le déploiement et l'utilisation des conteneurs Docker, accompagné d'un guide sur la sécurisation des conteneurs Docker en utilisant le logiciel de virtualisation open source Linux Qemu / KVM comme principal outil pour offrir des niveaux élevés d'isolation et de durabilité contre certains types d'attaque En plus de l'isolation logicielle fournie par la couche de virtualisation, d'autres technologies telles que SELinux & Cgroupes sont utilisés, fournissant des couches supplémentaires qui aideront à protéger et à durcir encore plus les systèmes, ce qui empêchera les mauvais acteurs de prendre le contrôle de nos infrastructures dans le première place. "
+#subject: # for office
+keywords:
+  - Docker
+  - Qemu
+  - KVM
+  - security
+  - SELinux
+  - Containerization
+  - Virtualization
+lang: en
+toc: true # table of contents
+toc-title: "Table des matières"
+toc-depth: 2
+tof: true # table of figures
+tot: true # table of tables
+thanks:
+  - Mr.Belalam
+  - Mme.Rezig
+  - Teachers
+numbersections: true
+secnumdepth: 3
+geometry:
+  - top=25mm
+  - right=10mm
+  - left=10mm
+  - bottom=25mm
+wrap: preserve
+papersize: a4
+fontsize: 14pt
+listings: True # to make pandoc-crossref work with --listings
+references-section-title: Bibliography
+bibliography: ../refs.bib
+# wrap: #auto,preserve,none
+# columns: #Number (def=72)
+---
+

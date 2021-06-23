@@ -1,0 +1,14 @@
+
+module my_sock_allow 1.0;
+
+require {
+	type container_runtime_t;
+	type proc_t;
+	type container_t;
+	class unix_stream_socket connectto;
+	class filesystem associate;
+}
+
+#============= container_t ==============
+allow container_t container_runtime_t:unix_stream_socket connectto;
+allow container_t proc_t:filesystem associate;

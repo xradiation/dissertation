@@ -1,0 +1,11 @@
+{
+	"auth": "none",
+	"https": true,
+	"listen": ":3179",
+	"camliNetIP": "",
+	"identity": "DC4E9BEE26D6C8E2",
+	"identitySecretRing": "/home/perkeep/.config/perkeep/identity-secring.gpg",
+	"blobPath": "/home/perkeep/var/perkeep/blobs",
+	"packRelated": true,
+	"levelDB": "/home/perkeep/var/perkeep/index.leveldb"
+}

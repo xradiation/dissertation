@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  nextwf:
+    image: wonderfall/nextcloud:20
+    container_name: nextwf
+    depends_on:
+      - nextwfdb
+    ports:
+      - 8888:8888
+    environment:
+      - UID=1004
+      - GID=1004
+      - DB_TYPE=pgsql
+      - DB_NAME=nextwfdb
+      - DB_USER=nextcloud
+      - DB_PASSWORD=Galaxy@s2
+      - DB_HOST=nextwfdb
+    ports:
+      - 8888:8888
+    volumes:
+      - /nextwf/data:/data
+      - /nextwf/config:/config
+      - /nextwf/apps2:/apps2
+      - /nextwf/nextcloud/themes:/nextcloud/themes
+      - /nextwf/php/session:/php/session
+    restart: always
+
+  nextwfdb:
+    image: postgres
+    container_name: nextwfdb
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=nextwfdb
+      - POSTGRES_USER=nextcloud
+      - POSTGRES_PASSWORD=Galaxy@s2
+    volumes:
+      - /nextwfdb:/var/lib/postgresql/data
+    restart: always
+

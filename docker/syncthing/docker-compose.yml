@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  syncthing:
+    image: syncthing/syncthing
+    container_name: syncthing
+    expose:
+      - "8384"
+    volumes:
+      - /wherever/sy-sync:/var/syncthing
+    environment:
+      - VIRTUAL_HOST=sync.local
+        #    labels: 
+        #      - "traefik.http.routers.syncthing.rule=Host(`10.1.10.2`)"
+        #      - "traefik.routers.syncthing.rule=Path(/syncthing)"
+

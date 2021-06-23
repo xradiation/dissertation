@@ -1,0 +1,3 @@
+- https://blog.aquasec.com/a-brief-history-of-containers-from-1970s-chroot-to-docker-2016
+- https://www.sdxcentral.com/containers/definitions/how-does-a-docker-container-work-explanation/
+- https://dockerlabs.collabnix.com/advanced/security/cgroups/

@@ -1,0 +1,266 @@
+Évaluation de la Sécurité des Conteneurs 
+        Docker Dans un Environnement 
+                        Virtualisé 
+
+Légende
+        ▷ Chapitre
+        ◦ Section
+        🢖 Élément
+
+Partie I
+      I ▷ Virtualisation
+     II ▷ Conteneurisation
+    III ▷ Sécurité
+    IV ▷ Application
+
+Partie II
+      I ▷ Qemu/KVM Web UI
+     II ▷ Pourquoi ?
+    III ▷ Comment ?
+    IV ▷ Application
+
+#---------------CHAPTER I---------------------
+Partie I :
+
+Chapitre I
+▷ Virtualizaion
+      ◦ La Définition
+      ◦ Les Composants
+      ◦ Les Types
+      ◦ Les Avantages
+      ◦ Les Inconvénients
+# I talk about what is virtualization, what role it played in the industry development over time
+
+La Définition
+    🢖 Qu'est-ce que c'est ?
+    🢖 Comment ça fonctionne ?
+
+# @white/type1_virtualizaion_white.png
+# Explain how virtualization works, hypervisors and their types - guests. And virtualization types [ Full, Hardware Assisted, Para ]
+
+Composants
+    🢖 Les VM
+    🢖 Hyperviseur
+    🢖 Hôte
+
+#@white/Type-1-Hyp_fr.png
+
+#@white/Type-2-Hyp_fr.png
+
+@white/Type-1vs2-Hyp_fr.png
+
+Les Types
+
+    🢖 Para-Virtualization
+    🢖 Para-Virtualisation
+
+@paravirtualization_diagram_fr.png
+
+    🢖 Hardware Assisted
+    🢖 Assistance matérielle
+
+@hardwarevirtualization_diagram_fr.png
+
+    🢖 Full Virtualization
+    🢖 Virtualisation Complète
+
+@fullvirtualization_diagram_fr.png
+
+
+Les Avantages
+    1. Sécurité
+    2. Isolation
+    3. Testé Profondément
+
+Les Inconvénients
+    1. Relativement Lente
+    2. Haut Consommation Des Ressources
+    3. La surutilisation des ressources
+
+#---------------CHAPTER II---------------------
+
+Chapitre II
+▷ Conteneurisation
+      ◦ Définition
+      ◦ Logiciel
+      ◦ Les Avantages
+      ◦ Les Inconvénients
+
+Qu'est-ce que la conteneurisation ❓
+# Talk about what is containerization, it's parent chroot and how it evolved
+
+@white/containerization_white.png
+# Explain the diagram and why Containerization is much lighter that virtualization, and what are the use cases
+
+Logiciel Disponible
+    🢖 Engines (Les Moteurs)
+    🢖 Orchestrators (Les Orchestrateurs)
+# What software can be used to deploy containerization
+
+# A bit of history
+@white/Lxc-logo.png
+
+@Untitled.png
+
+
+@shared/Docker-logo.png
+
+Les Avantages
+Pourquoi la Conteneurisation ?
+    - Très Léger  🪶
+    - Très Rapide ⚡
+    - Très Évolutive 📤
+#Here why it must be used in our infrastructures
+
+Les Inconvénients
+    - Isolation Faible
+    - Faible Sécurité 
+    - Haute Complexité 😿
+# What are the issues we're facing with this relatevly new technology
+
+#---------------CHAPTER III---------------------
+Chapitre III 
+▷ Sécurité
+  ◦ Les Menaces
+  ◦ Les Solutions
+# Let's address the security issues since they're the most important in any field
+#- Security ☣️
+#- Security ☢️
+#- Security 💀
+#- Security 💀
+
+Les Menaces
+    🢖 Exploits du Noyau ☠️
+    🢖 Les Ruptures de Conteneurs 
+    🢖 Compromis secret
+    🢖 root in = root out 💀
+    🢖 Déni de service
+    🢖 Escalade des Privilèges ☢️
+    🢖 Empoisonnement ☣️
+
+@vert_esc_diagram.png
+
+@horiz_esc_diagram.png
+
+@vert_presc_diagram.png
+
+@horiz_presc_diagram.png
+
+
+
+Que pouvons-nous faire ?
+Les Solutions
+    ◦ Virtualiser
+    ◦ SELinux
+    ◦ Cgroups
+    ◦ Audit
+    ◦ Résultats
+
+#Solutions
+# Why using containerization doesn't nesserilly mean that we're going to get rid of virtualization
+  Conteneurisation
+              VS
+    Virtualisation ?!
+
+
+# What is SELinux and how it's developed by the NSA and DoD since the edward snowden leaks. How MAC works and why it's useful, TE, RBAC, MLS, MCS ...
+SELinux
+
+@Selinux-logo.png
+
+@write_up_read_down.png
+
+@white/selinux_query_diagram.png
+
+# What is Cgroups how it's useful to limit resource consumption in containerization technology
+Cgroups
+    - Limiter le CPU%
+    - Scheduler Time
+    - Limiter la Memoire
+    - PIDs
+    - Et Plus...
+
+# Local Repos, Image security and quality audit is important
+Audit
+    - Des Images Custom
+    - Dépôts locaux 
+    - Analyse Statique/Dynamique
+
+@white/security_layers_white.png
+
+Les Results 🞋 ⚐
+
+#Virtualizing Containers
+La Virtualisation des Contenures
+🗹 Exploits du Noyau
+🗹 Les Ruptures de Conteneurs
+SELinux
+🗹 Compromis secret
+🗹 root in = root out
+🗹 Escalade des privilèges
+Cgroups
+🗹 Déni de service
+Audit
+🗹 Empoisonnement
+# tools such as: clair, docker cve, 
+
+
+#---------------CHAPTER IV---------------------
+Chapter IV
+▷ Application
+    ◦ La Topologie des VM
+    ◦ Virtualization Stack
+    ◦ Docker
+    ◦ Cgroups
+    ◦ SELinux
+    ◦ Déploiement
+
+@network_diagram_fr.png
+
+Qemu/KVM
+
+@Kvm-pretty-text-logo.png
+
+@Qemu-text-logo.png
+
+@Libvirt-logo.png
+
+@Openvswitch-logo.png
+
+Docker
+
+@white/container_topology_white.png
+
+SELinux
+
+
+Testing SELinux policy enforcement
+Tester La Politique
+
+Testing Cgroups
+Test Des Cgroups
+
+Testing Our Deployment
+Test De Deployement
+Test d'accessibilité
+
+
+
+#---------------CHAPTER I---------------------
+
+Part II:
+Chapter I
+      I ▷ Qemu/KVM Web UI
+     II ▷ Pourquoi ?
+    III ▷ Comment ?
+    IV ▷ Application
+
+Qemu/KVM
+
+Compliqué ?
+  Utilisons une
+        Web UI
+
+Fin
+
+#Success 🎉

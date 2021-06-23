@@ -1,0 +1,9 @@
+version: "3.8"
+  
+services:
+  invidious:
+    image: omarroth/invidious
+    container_name: invidious
+    ports:
+      - 3000:3000
+    

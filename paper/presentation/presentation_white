@@ -1,0 +1,189 @@
+  Evaluating Docker Containers
+Security In a Virtual Environment
+
+Part I
+
+  I‣ Virtualizaion
+ II‣ Containerization
+III‣ Security
+IV‣ Guidelines
+ V‣ Application
+
+Part II
+
+  I‣ Qemu/KVM Web UI
+ II‣ Why?
+III‣ How ?
+IV‣ Application
+
+#---------------CHAPTER I---------------------
+Part I :
+Chapter I
+
+Virtualizaion
+
+  ◦ What is it
+  ◦ Pros
+  ◦ Cons
+# I talk about what is virtualization, what role it played in the industry development over time
+
+@white/type1_virtualizaion_white.png
+# Explain how virtualization works, hypervisors and their types - guests. And virtualization types [ Full, Hardware Assisted, Para ]
+
+Pros
+
+1. Security
+2. Isolation
+3. Well Tested
+
+Cons
+
+1. Relatively Slow
+2. High Resource Consumption
+3. Cause Resource Overuse
+
+#---------------CHAPTER II---------------------
+II
+
+Containerization
+
+  ◦ What is it
+  ◦ Software
+  ◦ Pros
+  ◦ Cons
+
+What is Containerization ❓
+# Talk about what is containerization, it's parent chroot and how it evolved
+
+@white/containerization_white.png
+# Explain the diagram and why Containerization is much lighter that virtualization, and what are the use cases
+
+Available Software
+# What software can be used to deploy containerization
+
+@shared/Docker-logo.png
+
+@white/Lxc-logo.png
+
+@shared/kubernetes-text-logo.png
+
+Pros
+Why Containerization ?
+#Here why it must be used in our infrastructures
+
+- Light wight 🪶
+- Lightning Fast ⚡
+- Scalable 📤
+
+Cons
+# What are the issues we're facing with this relatevly new technology
+
+- Relatively Low Isolation
+- Low Security
+- Highly Complicated Architecture 😿
+
+#---------------CHAPTER III---------------------
+III
+
+Security
+  ◦ Threats
+# Let's address the security issues since they're the most important in any field
+
+Threats
+
+#- Security ☣️
+#- Security ☢️
+#- Security 💀
+#- Security 💀
+- Kernel Exploits ☠️
+- Breakouts ☣️
+- Secret Compromise
+- root in = root out 💀
+- Denial Of Service
+- Privilige Escalation ☢️
+- Poisoning
+
+What can we do ?
+
+#---------------CHAPTER IV---------------------
+IV
+
+Guidelines
+
+  ◦ Virtualizing
+  ◦ Namespaces
+  ◦ SELinux
+  ◦ Cgroups
+  ◦ Results
+
+#Solutions
+Guidelines
+
+Containerization
+        VS
+Virtualizaion
+
+It's Not a War
+# Why using containerization doesn't nesserilly mean that we're going to get rid of virtualization
+
+SELinux
+
+@white/selinux_query_diagram.png
+# What is SELinux and how it's developed by the NSA and DoD since the edward snowden leaks. How MAC works and why it's useful, TE, RBAC, MLS, MCS ...
+
+Cgroups
+# What is Cgroups how it's useful to limit resource consumption in containerization technology
+
+Audit
+# Local Repos, Image security and quality audit is important
+
+@white/security_layers_white.png
+
+Virtualizing Containers
+🗹 Kernel Exploits
+🗹 Breakouts
+
+SELinux
+🗹 Secret Compromise
+🗹 root in = root out
+🗹 Previlige Escalation
+
+Cgroups
+🗹 Denial Of Service
+
+Image Analisys
+Custom Images
+Local Repositories
+🗹 Poisoning
+
+
+#---------------CHAPTER V---------------------
+V
+
+Application
+
+Testing SELinux enforcement
+
+@white/docker_socket_perms.png
+
+Testing Cgroups
+
+Testing Our Deployment
+
+@white/container_topology_white.png
+
+
+#---------------CHAPTER I---------------------
+
+Part II:
+Chapter I
+
+Qemu/KVM
+
+Complicated ?
+  What About
+      Web UI
+
+Let's get started
+
+Success 🎉

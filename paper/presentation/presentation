@@ -1,0 +1,246 @@
+      Evaluating Docker Containers
+Security In a Virtualized Environment
+
+Legend
+        ▷ Chapter
+        ◦ Section
+        🢖 Element
+
+#🢒
+#▷
+#⏵
+
+#▸
+#🢖
+#▹
+
+#⇒
+#↦
+#⇛
+
+#⇉
+#⇨
+#↠
+
+#⇰
+#➾
+
+Part I
+      I ▷ Virtualizaion
+     II ▷ Containerization
+    III ▷ Security
+    IV ▷ Application
+
+Part II
+      I ▷ Qemu/KVM Web UI
+     II ▷ Why ?
+    III ▷ How ?
+    IV ▷ Application
+
+#---------------CHAPTER I---------------------
+Part I :
+
+Chapter I
+▷ Virtualizaion
+      ◦ Overview
+      ◦ Components
+      ◦ Types
+      ◦ Pros
+      ◦ Cons
+
+Overview
+    🢖 What is it
+    🢖 How it works
+    🢖 Somthing else
+# I talk about what is virtualization, what role it played in the industry development over time
+
+# @black/type1_virtualizaion_black.png
+
+
+Components
+    🢖 Guests
+    🢖 Hypervisor
+    🢖 Host
+
+@black/Type-1-Hyp_black.png
+
+@black/Type-2-Hyp_black.png
+
+@black/Type-1vs2-Hyp_black.png
+
+Types
+    🢖 Para-Virtualization
+    🢖 Hardware Assisted
+    🢖 Full Virtualization
+# Explain how virtualization works, hypervisors and their types - guests. And virtualization types [ Full, Hardware Assisted, Para ]
+
+Pros
+    🢖 Security
+    🢖 Isolation
+    🢖 Well Tested
+
+Cons
+    🢖 Relatively Slow
+    🢖 High Resource Consumption
+    🢖 Cause Resource Overuse
+
+#---------------CHAPTER II---------------------
+Chapter II
+▷ Containerization
+      ◦ What is it
+      ◦ Software
+      ◦ Pros
+      ◦ Cons
+
+What is Containerization ❓
+# Talk about what is containerization, it's parent chroot and how it evolved
+
+@black/containerization_black.png
+# Explain the diagram and why Containerization is much lighter that virtualization, and what are the use cases
+
+Available Software
+    🢖 Engines
+    🢖 Orchestrators
+# What software can be used to deploy containerization
+
+@black/Lxc-logo_black.png
+
+@Untitled.png
+
+#@shared/Docker-logo.png
+
+#@shared/kubernetes-text-logo.png
+
+#@shared/crio-logo.png
+
+Pros
+Why Containerization ?
+    🢖 Light wight 🪶
+    🢖 Lightning Fast ⚡
+    🢖 Scalable 📤
+#Here why it must be used in our infrastructures
+
+Cons
+    🢖 Relatively Low Isolation
+    🢖 Low Security
+    🢖 Highly Complicated Architecture 😿
+# What are the issues we're facing with this relatevly new technology
+
+#---------------CHAPTER III---------------------
+Chapter III 
+▷ Security
+  ◦ Threats
+  ◦ Guidelines
+# Let's address the security issues since they're the most important in any field
+#- Security ☣️
+#- Security ☢️
+#- Security 💀
+#- Security 💀
+
+Threats
+    🢖 Kernel Exploits ☠️
+    🢖 Breakouts ☣️
+    🢖 Secret Compromise
+    🢖 root in = root out 💀
+    🢖 Denial Of Service
+    🢖 Privilige Escalation ☢️
+    🢖 Poisoning
+
+What can we do ?
+Guidelines
+    🢖 Virtualizing
+    🢖 SELinux
+    🢖 Cgroups
+    🢖 Audit
+    🢖 Results
+
+#Solutions
+Containerization
+          VS
+Virtualizaion !!!
+🢖 It's Not A War
+
+# Why using containerization doesn't nesserilly mean that we're going to get rid of virtualization
+
+SELinux
+
+@black/selinux_query_diagram_black.png
+# What is SELinux and how it's developed by the NSA and DoD since the edward snowden leaks. How MAC works and why it's useful, TE, RBAC, MLS, MCS ...
+
+Cgroups
+# What is Cgroups how it's useful to limit resource consumption in containerization technology
+
+Audit
+# Local Repos, Image security and quality audit is important
+
+@black/security_layers.png
+
+Results 🞋 ⚐
+
+Virtualizing Containers
+🗹 Kernel Exploits
+🗹 Breakouts
+
+SELinux
+🗹 Secret Compromise
+🗹 root in = root out
+🗹 Previlige Escalation
+
+Cgroups
+🗹 Denial Of Service
+
+Image Analisys
+Custom Images
+Local Repositories
+🗹 Poisoning
+
+
+#---------------CHAPTER IV---------------------
+Chapter IV
+▷ Application
+    ◦ Topology Diagram
+    ◦ Qemu/KVM
+    ◦ SELinux
+    ◦ Docker
+    ◦ Cgroups
+    ◦ Deployment
+
+Qemu/KVM
+
+@black/network_diagram_black.png
+
+SELinux
+
+Docker
+
+@black/container_topology.png
+
+Testing SELinux enforcement
+
+@black/docker_socket_perms_black.png
+
+Testing Cgroups
+
+Testing Our Deployment
+
+
+#---------------CHAPTER I---------------------
+
+Part II:
+Chapter I
+    ◦ Qemu/KVM Web UI
+    ◦ Why ?
+    ◦ How ?
+    ◦ Application
+
+Qemu/KVM
+
+
+Why ?
+They Say Qemu/KVM is Complicated
+  What About
+      Web UI
+
+Let's get started
+
+Success 🎉

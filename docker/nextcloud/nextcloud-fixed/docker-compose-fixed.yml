@@ -1,0 +1,74 @@
+version: "2.3"
+services:
+
+nextcloud:
+    image: nextcloud:20
+    container_name: nextcloud
+    restart: unless-stopped
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=nextcloudPass
+      - MYSQL_DATABASE=nextcloudDB
+      - MYSQL_USER=nextcloudUser
+      - MYSQL_HOST=nextcloud-db
+      - NEXTCLOUD_TRUSTED_DOMAINS=nextcloud.example.com
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=[changeme]
+      - REDIS_HOST=nextcloud-redis
+      - REDIS_HOST_PASSORD=nextcloudRedisPass
+      - SMTP_HOST=smtp.mailgun.org
+      - SMTP_SECURE=ssl
+      - SMTP_PORT=465
+      - SMTP_NAME=[redacted]
+      - SMTP_PASSWORD=[redacted]
+      - [email protected]
+    depends_on:
+      - nextcloud-cron
+      - nextcloud-db
+      - nextcloud-redis
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nextcloud.entrypoints=websecure
+      - traefik.http.routers.nextcloud.rule=Host(`nextcloud.example.com`)
+      - traefik.http.routers.nextcloud.middlewares=nextcloud-dav,nextcloud-header
+      - traefik.http.middlewares.nextcloud-dav.replacepathregex.regex=^/.well-known/(card|cal)dav
+      - traefik.http.middlewares.nextcloud-dav.replacepathregex.replacement=/remote.php/dav/
+      - traefik.http.middlewares.nextcloud-header.headers.forceSTSHeader=true
+      - traefik.http.middlewares.nextcloud-header.headers.stsSeconds=15552000
+
+  nextcloud-cron:
+    image: nextcloud:20
+    container_name: nextcloud-cron
+    restart: unless-stopped
+    volumes:
+      - nextcloud:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      - nextcloud-db
+
+  nextcloud-db:
+    image: mariadb:10
+    container_name: nextcloud-db
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: unless-stopped
+    volumes:
+      - nextcloud-db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nextcloudDB
+      - MYSQL_USER=nextcloudUser
+      - MYSQL_PASSWORD=nextcloudPass
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+  nextcloud-redis:
+    image: redis:6
+    container_name: nextcloud-redis
+    command: redis-server --requirepass nextcloudRedisPass
+    restart: unless-stopped
+    volumes:
+      - nextcloud-redis:/data
+
+volumes:
+  nextcloud:
+  nextcloud-db:
+  nextcloud-redis:

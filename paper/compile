@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+# pandoc --listings -H \
+# /home/hicham/learning/writing/pandoc/metadata/listings-setup.tex \
+# --metadata-file=/home/hicham/learning/writing/pandoc/metadata/meta.yaml \
+# text_en.md \
+# -s -o text_en.pdf \
+# --filter pandoc-crossref
+
+pandoc --metadata-file=/home/hicham/learning/writing/pandoc/metadata/meta.yaml text_en.md -s -o text_en.pdf --filter pandoc-crossref &

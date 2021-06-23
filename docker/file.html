@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="ng-csp" data-placeholder-focus="false" lang="en" data-locale="en" >
+	<head
+ data-requesttoken="87jndeElyCD52XDlV9A04yCyI5Yu3S+O9i3K8CzGp+g=:uM2XWrNv4xKOtTuWeJRdgG70S+5UhADtk1f7wBW27Kk=">
+		<meta charset="utf-8">
+		<title>
+		Nextcloud		</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+				<meta name="apple-itunes-app" content="app-id=1125420102">
+				<meta name="theme-color" content="#0082c9">
+		<link rel="icon" href="/core/img/favicon.ico">
+		<link rel="apple-touch-icon" href="/core/img/favicon-touch.png">
+		<link rel="mask-icon" sizes="any" href="/core/img/favicon-mask.svg" color="#0082c9">
+		<link rel="manifest" href="/core/img/manifest.json">
+		<link rel="stylesheet" href="/core/css/guest.css?v=ba222ded25d957b900c03bef914333cd">
+		<script nonce="ODdqbmRlRWx5Q0Q1MlhEbFY5QTA0eUN5STVZdTNTK085aTNLOEN6R3ArZz06dU0yWFdyTnY0eEtPdFR1V2VKUmRnRzcwUys1VWhBRHRrMWY3d0JXMjdLaz0=" defer src="/core/js/dist/main.js?v=ba222ded25d957b900c03bef914333cd"></script>
+<script nonce="ODdqbmRlRWx5Q0Q1MlhEbFY5QTA0eUN5STVZdTNTK085aTNLOEN6R3ArZz06dU0yWFdyTnY0eEtPdFR1V2VKUmRnRzcwUys1VWhBRHRrMWY3d0JXMjdLaz0=" defer src="/core/js/dist/install.js?v=ba222ded25d957b900c03bef914333cd"></script>
+			</head>
+	<body id="body-login">
+		<noscript>
+	<div id="nojavascript">
+		<div>
+			This application requires JavaScript for correct operation. Please <a href="https://www.enable-javascript.com/" target="_blank" rel="noreferrer noopener">enable JavaScript</a> and reload the page.		</div>
+	</div>
+</noscript>
+				<div class="wrapper">
+			<div class="v-align">
+									<header role="banner">
+						<div id="header">
+							<div class="logo">
+								<h1 class="hidden-visually">
+									Nextcloud								</h1>
+															</div>
+						</div>
+					</header>
+								<main>
+					<input type='hidden' id='hasMySQL' value='1'>
+<input type='hidden' id='hasSQLite' value='1'>
+<input type='hidden' id='hasPostgreSQL' value='1'>
+<input type='hidden' id='hasOracle' value=''>
+<form action="index.php" method="post">
+<input type="hidden" name="install" value="true">
+			<fieldset id="adminaccount">
+		<legend>Create an <strong>admin account</strong></legend>
+		<p class="grouptop">
+			<input type="text" name="adminlogin" id="adminlogin"
+				placeholder="Username"
+				value=""
+				autocomplete="off" autocapitalize="none" autocorrect="off" autofocus required>
+			<label for="adminlogin" class="infield">Username</label>
+		</p>
+		<p class="groupbottom">
+			<input type="password" name="adminpass" data-typetoggle="#show" id="adminpass"
+				placeholder="Password"
+				value=""
+				autocomplete="off" autocapitalize="none" autocorrect="off" required>
+			<label for="adminpass" class="infield">Password</label>
+			<input type="checkbox" id="show" class="hidden-visually" name="show" aria-label="Show password">
+			<label for="show"></label>
+		</p>
+	</fieldset>
+
+		<fieldset id="advancedHeader">
+		<legend><a id="showAdvanced" tabindex="0" href="#">Storage &amp; database<img src="/core/img/actions/caret-white.svg" /></a></legend>
+	</fieldset>
+	
+		<fieldset id="datadirField">
+		<div id="datadirContent">
+			<label for="directory">Data folder</label>
+			<input type="text" name="directory" id="directory"
+				placeholder="/var/www/html/data"
+				value="/var/www/html/data"
+				autocomplete="off" autocapitalize="none" autocorrect="off">
+		</div>
+	</fieldset>
+	
+		<fieldset id='databaseBackend'>
+				<legend>Configure the database</legend>
+		<div id="selectDbType">
+						<input type="radio" name="dbtype" value="sqlite" id="sqlite"
+			/>
+		<label class="sqlite" for="sqlite">SQLite</label>
+								<input type="radio" name="dbtype" value="mysql" id="mysql"
+			/>
+		<label class="mysql" for="mysql">MySQL/MariaDB</label>
+								<input type="radio" name="dbtype" value="pgsql" id="pgsql"
+			/>
+		<label class="pgsql" for="pgsql">PostgreSQL</label>
+						</div>
+	</fieldset>
+
+				<fieldset id='databaseField'>
+		<div id="use_other_db">
+			<p class="grouptop">
+				<label for="dbuser" class="infield">Database user</label>
+				<input type="text" name="dbuser" id="dbuser"
+					placeholder="Database user"
+					value=""
+					autocomplete="off" autocapitalize="none" autocorrect="off">
+			</p>
+			<p class="groupmiddle">
+				<input type="password" name="dbpass" id="dbpass" data-typetoggle="#dbpassword-toggle"
+					placeholder="Database password"
+					value=""
+					autocomplete="off" autocapitalize="none" autocorrect="off">
+				<label for="dbpass" class="infield">Database password</label>
+				<input type="checkbox" id="dbpassword-toggle" class="hidden-visually" name="dbpassword-toggle" aria-label="Show password">
+				<label for="dbpassword-toggle"></label>
+			</p>
+			<p class="groupmiddle">
+				<label for="dbname" class="infield">Database name</label>
+				<input type="text" name="dbname" id="dbname"
+					placeholder="Database name"
+					value=""
+					autocomplete="off" autocapitalize="none" autocorrect="off"
+					pattern="[0-9a-zA-Z$_-]+">
+			</p>
+						<p class="groupbottom">
+				<label for="dbhost" class="infield">Database host</label>
+				<input type="text" name="dbhost" id="dbhost"
+					placeholder="Database host"
+					value="localhost"
+					autocomplete="off" autocapitalize="none" autocorrect="off">
+			</p>
+			<p class="info">
+				Please specify the port number along with the host name (e.g., localhost:5432).			</p>
+		</div>
+		</fieldset>
+			
+			<fieldset id="sqliteInformation" class="warning">
+			<legend>Performance warning</legend>
+			<p>You chose SQLite as database.</p>
+			<p>SQLite should only be used for minimal and development instances. For production we recommend a different database backend.</p>
+			<p>If you use clients for file syncing, the use of SQLite is highly discouraged.</p>
+		</fieldset>
+	
+	<fieldset>
+		<p class="info">
+			<input type="checkbox" id="install-recommended-apps" name="install-recommended-apps" class="checkbox checkbox--white" checked>
+			<label for="install-recommended-apps">
+				Install recommended apps				<span>Calendar, Contacts, Talk, Mail &amp; Collaborative editing</span>
+			</label>
+		</p>
+	</fieldset>
+
+	<div class="icon-loading-dark float-spinner">&nbsp;</div>
+
+	<div class="buttons"><input type="submit" class="primary" value="Finish setup" data-finishing="Finishing …"></div>
+
+	<p class="info">
+		<span class="icon-info-white"></span>
+		Need help?		<a target="_blank" rel="noreferrer noopener" href="https://docs.nextcloud.com/server/20/go.php?to=admin-install">See the documentation ↗</a>
+	</p>
+</form>
+				</main>
+			</div>
+		</div>
+		<footer role="contentinfo">
+			<p class="info">
+				<a href="https://nextcloud.com" target="_blank" rel="noreferrer noopener">Nextcloud</a> – a safe home for all your data			</p>
+		</footer>
+	</body>
+</html>

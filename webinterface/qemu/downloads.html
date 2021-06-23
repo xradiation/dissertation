@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Downloads</title>
+    <link rel="stylesheet" href="../style/bulma.min.css" />
+    <link rel="stylesheet" href="../style/webfonts/all.css" />
+    <script src="../style/jquery-3.5.1.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#del_linux").click(function () {
+          $("#not_linux").fadeOut("slow");
+        });
+        $("#del_win").click(function () {
+          $("#not_win").fadeOut("slow");
+        });
+        $("#del_mac").click(function () {
+          $("#not_mac").fadeOut("slow");
+        });
+        $("#del_chr").click(function () {
+          $("#not_chr").fadeOut("slow");
+        });
+        $("#del_fir").click(function () {
+          $("#not_fir").fadeOut("slow");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript" src="header.js"></script>
+
+    <section class="section has-background-dark">
+      <div class="container has-background-dark">
+        <div class="columns">
+          <div class="column">
+            <div id="not_linux" class="notification is-warning">
+              <button id="del_linux" class="delete"></button>
+              <h1 class="title is-size-4"><b> Linux VNC Clients </b></h1>
+              <strong
+                ><a href="../vnc_clients/multivnc_0.5-1_amd64.deb"
+                  >Debian Multivnc 64bit</a
+                ></strong
+              >
+            </div>
+          </div>
+
+          <div class="column">
+            <div id="not_win" class="notification is-link">
+              <button id="del_win" class="delete"></button>
+              <h1 class="title is-size-4"><b> Windows VNC Clients </b></h1>
+
+              <strong
+                ><a href="../vnc_clients/multivnc_0.5-win32-setup.exe"
+                  >Windows Multivnc 32bit</a
+                ></strong
+              >
+            </div>
+          </div>
+
+          <div class="column">
+            <div id="not_mac" class="notification is-black">
+              <button id="del_mac" class="delete"></button>
+              <h1 class="title is-size-4"><b> MacOS VNC Clients </b></h1>
+
+              <strong
+                ><a href="../vnc_clients/MultiVNC-prerelease.dmg"
+                  >MacOS Multivnc 64bit</a
+                ></strong
+              >
+            </div>
+          </div>
+
+          <div class="column">
+            <div id="not_chr" class="notification is-danger">
+              <button id="del_chr" class="delete"></button>
+              <h1 class="title is-size-4"><b> Chrome VNC Clients </b></h1>
+              <strong>Pellentesque risus mi</strong>
+            </div>
+          </div>
+
+          <div class="column">
+            <div id="not_fir" class="notification is-success">
+              <button id="del_fir" class="delete"></button>
+              <h1 class="title is-size-4"><b> Android VNC Clients </b></h1>
+              <strong>
+                <a href="../vnc_clients/multivnc_72.apk"
+                   >Android Multivnc</a>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section has-background-dark">
+      <div class="container has-background-dark">
+          <div class="column">
+            <div id="not_fir" class="notification is-success">
+              <button id="del_fir" class="delete"></button>
+              <h1 class="title is-size-4"><b>Download VM Image</b></h1>
+
+
+      <form
+        id="download_vm"
+        name="download_vm"
+        method="post"
+        action="/cgi-bin/download_vm.cgi"
+      >
+
+              <label
+                for="vm_name"
+                for="storage_format"
+                class="label has-text-centered has-text-white"
+                >VM Name / Storage Format</label
+              >
+
+              <div class="field has-addons">
+                <div class="control is-expanded has-icons-left">
+                  <input
+                    id="vm_name"
+                    name="vm_name"
+                    class="input is-warning is-rounded"
+                    type="text"
+                    placeholder="Virtual Machine Name"
+                    pattern="[a-z]{1,40}"
+                    title="Only lower case characters, without spaces !"
+                    autofocus
+                    required
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="far fa-object-ungroup"></i>
+                  </span>
+                </div>
+
+                <div class="control has-icons-left">
+                  <div class="select is-warning is-rounded">
+                    <select id="storage_format" name="storage_format">
+                      <option value="qcow2">.qcow2</option>
+                      <option value="raw">.raw</option>
+                      <option value="qcow">.qcow</option>
+                      <option value="qed">.qed</option>
+                      <option value="vdi">.vdi</option>
+                      <option value="vmdk">.vmdk</option>
+                    </select>
+                  </div>
+                  <div class="icon is-small is-left">
+                    <i class="fas fa-file"></i>
+                  </div>
+                </div>
+              </div>
+
+
+            <!-- <div class="colomn is-8"> -->
+              <!-- <div class="buttons has-addons is-centered"> -->
+                <!-- <button -->
+                  <!-- type="reset" -->
+                  <!-- class="button is-danger is-outlined is-rounded" -->
+                  <!-- style="width: 40%" -->
+                <!-- > -->
+                  <!-- <span class="icon"> -->
+                    <!-- <i class="fas fa-times-circle"></i> -->
+                  <!-- </span> -->
+                  <!-- <span>RESET</span> -->
+                <!-- </button> -->
+
+                <!-- <button -->
+                  <!-- id="submit" -->
+                  <!-- type="submit" -->
+                  <!-- class="button is-warning is-outlined is-rounded" -->
+                  <!-- style="width: 40%" -->
+                <!-- > -->
+                  <!-- <span class="icon"> -->
+                    <!-- <i class="fas fa-play"></i> -->
+                  <!-- </span> -->
+                  <!-- <span>CREATE</span> -->
+                <!-- </button> -->
+              <!-- </div> -->
+            <!-- </div> -->
+
+      </form>
+
+            </div>
+          </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="footer.js"></script>
+  </body>
+</html>

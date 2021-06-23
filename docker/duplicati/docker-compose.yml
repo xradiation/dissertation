@@ -1,0 +1,21 @@
+version: "3.8"
+
+volumes:
+  duplicati-data:
+
+services:
+  duplicati:
+    image: duplicati/duplicati
+    container_name: duplicati
+    ports:
+      - 8200:8200
+    networks:
+      - nginx_proxy_dup_net
+    volumes:
+      - duplicati-data:/data
+    environment:
+      - VIRTUAL_HOST=dup.dom.net
+        #    labels:
+        #      - "traefik.http.routers.duplicati.rule=Host(`10.1.10.2`)"
+        #      - "traefik.routers.duplicati.rule=Path(/duplicati)"
+        

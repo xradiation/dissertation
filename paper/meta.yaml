@@ -1,0 +1,41 @@
+
+---
+documentclass: memoir # article,report,book,scrreprt,scrbook,scrartcl,scrlttr2,memoir
+title: " Containerization Overview & Security "
+subtitle: " General Guide "
+author: " Guenfaf Hicham "
+date: "2020-06-06"
+abstract: " This paper mainly focuses on how to setup, deploy & use docker containers, accompanied with a guide on how to secure docker containers by using linux open source virtualization software Qemu/KVM as the main tool to offer high levels of isolation and durability against some high severity threat actors.Alongside the software isolation provided by the virtualization layer other technologies such as SELinux, cgroups are used, providing additional layers that will help protect and harden the systems even further, which will prevents bad actors from taking over our infrastructures in the first place. "
+#subject: # for office
+keywords:
+  - Docker
+  - Qemu
+  - KVM
+  - security
+  - SELinux
+  - Containerization
+  - Virtualization
+lang: en
+toc: true # table of contents
+toc-title: "Paper Contents"
+tof: true # table of figures
+tot: true # table of tables
+thanks:
+  - Every One
+numbersections: true
+geometry:
+  - top=30mm
+  - right=20mm
+  - left=20mm
+  - bottom=30mm
+wrap: preserve
+papersize: a4
+fontsize: 12pt
+listings: True # to make pandoc-crossref work with --listings
+references-section-title: Bibliography
+bibliography: refs.bib
+# bibliography: /path/to/file # to add bib data, do it later
+# wrap: #auto,preserve,none
+# columns: #Number (def=72)
+---
+

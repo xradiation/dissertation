@@ -1,0 +1,13 @@
+{
+	"auth": "none",
+	"https": true,
+	"listen": ":3179",
+	"camliNetIP": "",
+	"identity": "7C4E55B1C3A5F39B",
+	"identitySecretRing": "/home/perkeep/.config/perkeep/identity-secring.gpg",
+	"blobPath": "/home/perkeep/var/perkeep/blobs",
+	"packRelated": true,
+	"runIndex": true,
+	"dbname": "perkeep",
+	"postgres": "perkeep@postgres:postgres?sslmode=disable"
+}

@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  nextpsql:
+    image: ghcr.io/linuxserver/nextcloud
+    container_name: nextcloudpsql
+    ports:
+      - 443:443
+    depends_on:
+      - nextpsqldb
+    volumes:
+      - /nextpsql/appdata:/config
+      - /nextpsql/data:/data
+    environment:
+      - PUID=1003
+      - PGID=1003
+      - TZ=Africa/Algiers
+    restart: unless-stopped
+
+  nextpsqldb:
+    image: postgres
+    container_name: nextpsqldb
+    ports:
+      - 5432:5432
+    depends_on:
+      - adminer
+    volumes:
+      - /nextpsql-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=Galaxy@s2
+      - POSTGRES_USER=nextcloudUser
+      - POSTGRES_DB=nextcloudDb
+    restart: always
+  
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    restart: always
+
+
+
+

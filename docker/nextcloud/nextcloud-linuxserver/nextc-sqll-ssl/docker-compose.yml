@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  nextcloud:
+    image: ghcr.io/linuxserver/nextcloud
+    container_name: nextcloud
+    ports:
+      - 443:443
+    volumes:
+      - /nextsqll/appdata:/config
+      - /nextsqll/data:/data
+    environment:
+      - PUID=1002
+      - PGID=1002
+      - TZ=Africa/Algiers
+    restart: unless-stopped

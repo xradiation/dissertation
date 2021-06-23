@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm -d -p 8384:8384 -p 22000:22000 -v /wherever/sy-sync:/var/syncthing syncthing/syncthing:latest

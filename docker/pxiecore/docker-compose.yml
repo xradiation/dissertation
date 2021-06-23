@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  pixe:
+    image: pixiecore/pixiecore
+    network_mode: host
+    volumes:
+      - /pxe_images:/image
+
+

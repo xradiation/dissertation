@@ -1,0 +1,81 @@
+version: "3.8"
+
+services:
+  nextcloud_reverse_proxy:
+    image: jwilder/nginx-proxy
+    container_name: nextcloud_reverse_proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./keys:/etc/nginx/certs:Z
+
+  nextcloud:
+    image: ghcr.io/linuxserver/nextcloud
+    container_name: nextcloud
+    expose:
+      - 443
+    volumes:
+      - /nextsqll/appdata:/config:Z
+      - /nextsqll/data:/data:Z
+    environment:
+      - VIRTUAL_HOST=nextcloud.dom.net,nex.dom.net
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_PORT=443
+      - PUID=1002
+      - PGID=1002
+      - TZ=Africa/Algiers
+    depends_on:
+      - nextcloud_reverse_proxy
+    restart: unless-stopped
+
+  syncthing:
+    image: syncthing/syncthing
+    container_name: syncthing
+    expose:
+      - "8384"
+      - "22000"
+        #    ports:
+        #      - 8384:8384
+        #      - 22000:22000
+    volumes:
+      - /wherever/sy-sync:/var/syncthing:Z
+    environment:
+      - VIRTUAL_HOST=syncthing.dom.net,syn.dom.net
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_PORT=8384
+      - STGUIADDRESS=0.0.0.0:8384
+    depends_on:
+      - nextcloud_reverse_proxy
+
+
+  duplicati:
+    image: ghcr.io/linuxserver/duplicati
+    container_name: duplicati
+    expose:
+      - 8200
+    volumes:
+      - duplicati-data:/data:Z
+    environment:
+      - VIRTUAL_HOST=duplicati.dom.net,dup.dom.net
+      - PUID=1003
+      - PGID=1003
+      - TZ=Africa/Algiers
+    volumes:
+      - /duplicati/config:/config:Z
+      - /duplicati/backups:/backups:Z
+      - /duplicati/source:/source:Z
+    depends_on:
+      - nextcloud_reverse_proxy
+    restart: unless-stopped
+
+  perkeep:
+    image: xradiation/perkeep:latest
+    container_name: perkeep
+    expose:
+      - 3179
+    environment:
+      - VIRTUAL_HOST=duplicati.dom.net,dup.dom.net
+    depends_on:
+      - nextcloud_reverse_proxy

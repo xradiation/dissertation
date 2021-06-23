@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  reverse-proxy:
+    image: traefik
+    command: --api.insecure=true --providers.docker
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+        #  whoami: 
+    #    image: traefik/whoami
+      #    labels:
+      #      - "traefik.http.routers.whoami.rule=Host(`10.1.10.2`)"
+        #      - "traefik.routers.whoami.rule=Path(/whoami)"
+
+
+  syncthing:
+    image: syncthing/syncthing
+    container_name: syncthing
+    ports:
+      - 8384:8384
+    volumes:
+      - /wherever/sy-sync:/var/syncthing
+    labels: 
+      - "traefik.enable=true"
+      - "traefik.http.routers.syncthing.rule=Host(`10.1.10.2`)"
+      - "traefik.routers.syncthing.rule=Path(/syncthing)"
+      - "traefik.http.services.syncthing.loadbalancer.server.port=8384"
+

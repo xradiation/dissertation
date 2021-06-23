@@ -1,0 +1,4 @@
+
+type=AVC msg=audit(1612094449.795:452): avc:  denied  { connectto } for  pid=1628 comm="docker-gen" path="/run/docker.sock" scontext=system_u:system_r:container_t:s0:c672,c722 tcontext=system_u:system_r:container_runtime_t:s0 tclass=unix_stream_socket permissive=0
+type=AVC msg=audit(1612094884.764:493): avc:  denied  { connectto } for  pid=1268 comm="portainer" path="/run/docker.sock" scontext=system_u:system_r:container_t:s0:c213,c812 tcontext=system_u:system_r:container_runtime_t:s0 tclass=unix_stream_socket permissive=0
+type=AVC msg=audit(1612101507.395:394): avc:  denied  { associate } for  pid=2193 comm="nginx" name="2" scontext=system_u:object_r:container_t:s0:c310,c901 tcontext=system_u:object_r:proc_t:s0 tclass=filesystem permissive=1

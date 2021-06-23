@@ -1,0 +1,8 @@
+digraph {
+    a [label=Dockerfile, shape=box]
+    b [label=Image, shape=box]
+    c [label=Container, shape=box]
+
+    a -> b [label=Build]
+    b -> c [label=Run]
+}

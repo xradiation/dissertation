@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm --name=duplicati -d -p 8200:8200 -v duplicati-data:/data duplicati/duplicati
